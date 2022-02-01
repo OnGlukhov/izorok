@@ -12,7 +12,7 @@ import Examples from '../components/Examples/Examples'
 import Contacts from '../components/Contacts/Contacts'
 import Footer from '../components/Footer/Footer'
 
-export default function Home() {
+export default function Home({products}) {
 	const [width, setWidth] = useState(null)
 	useEffect(() => {
 		if (!width) setWidth(window.innerWidth)
@@ -32,7 +32,7 @@ export default function Home() {
 			<FirstScreen />
 			<Description />
 			<OrderCall />
-			<Сatalog />
+			<Сatalog width={width} products={products}/>
 			<Advantages />
 			<Examples />
 			<Contacts />
@@ -41,3 +41,16 @@ export default function Home() {
 		</div>
 	)
 }
+export async function getStaticProps(context) {
+	// Call an external API endpoint to get posts.
+	// You can use any data fetching library
+	const res = await fetch('https://xn--j1ano.com/uploads/staticsites/isoroc.json')
+	const products = await res.json()
+	// By returning { props: { posts } }, the Blog component
+	// will receive `posts` as a prop at build time
+		return {
+			props: {
+			products,
+			},
+		}
+  }

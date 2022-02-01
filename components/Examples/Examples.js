@@ -4,8 +4,8 @@ import { examples } from '../../data/examples'
 export default function Examples() {
 	return (
 		<section className={styles.examples} id="examples">
-      <h1 className={styles.examples_title}>Примеры использования <span>фанеры</span></h1>
-      <p className={styles.examples_subtitle}>Фанера применяется в самых разных областях строительства, для самых разных целей.</p>
+      <h1 className={styles.examples_title}>Примеры использования утеплителя <span>ISOROC</span></h1>
+      <p className={styles.examples_subtitle}>Утеплитель применяется в самых разных областях строительства, для самых разных целей.</p>
       <div className={styles.examples_item_list}>
 				{examples.map((item, i) => (
 				<div key={i} className={styles.examples_item}>

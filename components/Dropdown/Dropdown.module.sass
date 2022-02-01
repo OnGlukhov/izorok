@@ -1,16 +1,10 @@
 .dropdown
-	// position: relative
 	display: flex
 	justify-content: space-between
-	max-width: 650px
-	margin: 0 auto
-	@media(max-width: 700px)
-		flex-direction: column
+	@media(max-width: 450px)
+		justify-content: center
 	&_wrapper
 		position: relative
-		@media(max-width: 700px)
-			justify-content: center
-			display: flex
 	&_menu
 		margin-top: 5px
 		position: absolute
@@ -22,12 +16,18 @@
 		z-index: 3
 		opacity: 1
 		visibility: visible
+		max-height: 70vh
+		overflow: scroll
 		@media(max-width: 700px)
 			top: 45px
-			width: 90%
-		@media(max-width: 500px)
-			width: 100%
-
+		&_list
+			// font-size: 18px
+			list-style: none
+			padding: 0
+			display: grid
+			// grid-template-columns: 1fr 1fr
+			gap: 20px 0
+			margin: 0
 	& img
 		height: 10px
 		margin-left: 10px
@@ -44,31 +44,32 @@
 		border-radius: 6px
 		line-height: 1.5
 		margin: 0
-		padding: 0 15px
-		@media(max-width: 700px)
+		padding: 0 40px
+		font-weight: 700
+		@media(max-width: 450px)
 			margin-bottom: 10px
-			width: 90%
-		@media(max-width: 500px)
-			width: 100%
 		&:hover
 			color: #fff
 			background-color: #ac0909
 			transition: 0.3s cubic-bezier(0.2, 1, 0.3, 1)
 	&_item
-		line-height: 2
+		line-height: 1.4
 		font-weight: 300
-		font-size: 16px
+		font-size: 18px
 		transition: all 0.3s ease-in-out
-		color: #74757f
+		color: #d6d6d6
 		text-align: center
 		cursor: pointer
+		display: flex
+		flex-direction: column
+		color: #d6d6d6
 		&:hover
-			background-color: #454545
-			color: #fff
+			color: #000
+		& a
+			font-size: 14px
 
 .active
-	background-color: #454545
-	color: #fff
+	color: #000
 	font-weight: 700
 
 .off
@@ -90,22 +91,3 @@
 	display: flex
 	align-items: center
 	justify-content: center
-.SwiperSlide
-	background: red
-	justify-content: center
-	display: flex
-	color: #fff
-	font-weight: 500
-	cursor: pointer
-	font-size: 16px
-	height: 40px
-	align-items: center
-	border-radius: 5px
-	text-align: center
-	&:hover
-		background-color: #ac0909
-		transition: .3s
-.Swiper
-	height: 40px
-.swiper-button-next  
-	color: red
